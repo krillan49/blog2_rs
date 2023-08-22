@@ -12,8 +12,48 @@
  *
  *= require_tree .
  *= require_self
- */
+*/
 
- body {
-  margin-top: 4rem;
- }
+body {
+  margin-top: 6rem;
+}
+
+/* a:hover, a.navbar-brand:hover, a.nav-link:hover, a:focus, a.navbar-brand:focus, a.nav-link:focus {
+  color: rgb(61, 149, 178);
+  text-decoration: none;
+  outline: 0;
+} */
+
+ /* ==================================== */
+ /* Header navbar -- application.html.erb */
+ /* ==================================== */
+
+.navbar {
+  font-weight: 500;
+  padding-top: 1rem; padding-bottom: 1rem;
+  background-color: rgb(157, 206, 220)!important;
+}
+
+a.nav-link{
+  margin-left: 1rem;
+}
+
+a.navbar-brand, a.nav-link {
+  color: rgb(30, 136, 171);
+}
+a.navbar-brand:hover, a.nav-link:hover {
+  color: rgb(5, 105, 135);
+}
+
+.navbar-toggler>span { color: rgb(30, 136, 171);}
+
+.navbar-toggler {
+  background-color: rgb(157, 206, 220)!important;
+  /* border-color: rgb(30, 136, 171); */
+}
+
+.navbar .navbar-brand{
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}

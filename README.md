@@ -1,24 +1,38 @@
-# README
+# Blog2(rubyschool)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby, Rails, Devise, Rspec.
 
-Things you may want to cover:
+[Учебный проект на Ruby/Rails c курса Rubyschool](https://rubyschool.us/)
 
-* Ruby version
+For scaffolding and polymorphism training
 
-* System dependencies
 
-* Configuration
+* Ruby version 3.1.2p20
 
-* Database creation
 
-* Database initialization
+## Start project
 
-* How to run the test suite
+1. Install gems:
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+bundle install
+```
 
-* Deployment instructions
+2. Migrate:
 
-* ...
+```bash
+rake db:migrate
+```
+
+3. Run RoR application:
+
+```bash
+rails s
+```
+
+4. Open in your browser: http://localhost:3000/
+
+Дополнено/изменено:
+-
+* Bootstrap 5
+
