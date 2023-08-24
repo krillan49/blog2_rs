@@ -13,7 +13,29 @@
 <!-- ===================== comments _form.html.erb ======================== -->
 <h1>New comment</h1>
 
-<%= render "com_form", comment: @post.comments.build %> <!-- отправим build -->
+<%= form_for([@post, @post.comments.build]) do |form| %>
+
+  <!-- ====== Скрываем поля и подставим значения ======= -->
+  <div>
+    <%= form.text_field :commentable_type, value: 'Post' %>
+    <%= form.text_field :commentable_id, value: @post.id %>
+  </div>
+  <!-- ================================================== -->
+
+  <div>
+    <%= form.label :author, style: "display: block" %>
+    <%= form.text_field :author %>
+  </div>
+
+  <div>
+    <%= form.label :body, style: "display: block" %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
 
 <br>
 <!-- ====================================================================== -->

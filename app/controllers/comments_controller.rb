@@ -29,15 +29,25 @@ class CommentsController < ApplicationController
       @comment = Image.find(option_comment.commentable_id).comments.new(comment_params)
     end
 
-    respond_to do |format|
+    if params[:post_id] # прверка где создан коммент на странице родительской сущности или нет
       if @comment.save
-        format.html { redirect_to comment_url(@comment), notice: "Comment was successfully created." }
-        format.json { render :show, status: :created, location: @comment }
+        @post = Post.find(params[:post_id])
+        redirect_to post_path(@post) # get /posts/id  #show
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+        render :new
+      end
+    else
+      respond_to do |format|
+        if @comment.save
+          format.html { redirect_to comment_url(@comment), notice: "Comment was successfully created." }
+          format.json { render :show, status: :created, location: @comment }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @comment.errors, status: :unprocessable_entity }
+        end
       end
     end
+    
   end
 
   # PATCH/PUT /comments/1 or /comments/1.json
