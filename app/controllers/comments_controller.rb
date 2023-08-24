@@ -21,7 +21,13 @@ class CommentsController < ApplicationController
 
   # POST /comments or /comments.json
   def create
-    @comment = Comment.new(comment_params)
+    option_comment = Comment.new(comment_params)
+
+    if option_comment.commentable_type == 'Post'
+      @comment = Post.find(option_comment.commentable_id).comments.new(comment_params)
+    else
+      @comment = Image.find(option_comment.commentable_id).comments.new(comment_params)
+    end
 
     respond_to do |format|
       if @comment.save
@@ -65,6 +71,6 @@ class CommentsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def comment_params
-    params.require(:comment).permit(:author, :body) # начнем с изменений тут
+    params.require(:comment).permit(:author, :body, :commentable_type, :commentable_id)
   end
 end

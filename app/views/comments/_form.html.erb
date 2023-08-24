@@ -11,6 +11,13 @@
     </div>
   <% end %>
 
+  <!-- ===================== добавлено ======================== -->
+  <div>
+    <%= form.text_field :commentable_type %>
+    <%= form.text_field :commentable_id %>
+  </div>
+  <!-- ======================================================== -->
+
   <div>
     <%= form.label :author, style: "display: block" %>
     <%= form.text_field :author %>
