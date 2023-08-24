@@ -19,9 +19,9 @@ class CommentsController < ApplicationController
   def edit
   end
 
-  # POST /comments or /comments.json
+  # POST /comments or /comments/:post_id/comments
   def create
-    option_comment = Comment.new(comment_params)
+    option_comment = Comment.new(comment_params) # для того чтоб удобнее использовать значение параметров
 
     if option_comment.commentable_type == 'Post'
       @comment = Post.find(option_comment.commentable_id).comments.new(comment_params)
@@ -64,13 +64,12 @@ class CommentsController < ApplicationController
   end
 
   private
-  # Use callbacks to share common setup or constraints between actions.
+
   def set_comment
     @comment = Comment.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
-  def comment_params
-    params.require(:comment).permit(:author, :body, :commentable_type, :commentable_id)
+  def comment_params # добавляем commentable поля
+    params.require(:comment).permit(:author, :body, :commentable_type, :commentable_id) 
   end
 end

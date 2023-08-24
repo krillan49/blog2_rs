@@ -8,3 +8,12 @@
 
   <%= button_to "Destroy this post", @post, method: :delete %>
 </div>
+
+
+<!-- ===================== comments _form.html.erb ======================== -->
+<h1>New comment</h1>
+
+<%= render "com_form", comment: @post.comments.build %> <!-- отправим build -->
+
+<br>
+<!-- ====================================================================== -->
