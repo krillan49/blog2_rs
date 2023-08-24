@@ -2,6 +2,8 @@
 
 <h1>Comments</h1>
 
+<h5><%= link_to "New comment", new_comment_path %></h5><br>
+
 <div id="comments">
   <% @comments.each do |comment| %>
     <%= render comment %>
@@ -11,4 +13,4 @@
   <% end %>
 </div>
 
-<%= link_to "New comment", new_comment_path %>
+

@@ -13,12 +13,12 @@
 <!-- ===================== comments _form.html.erb ======================== -->
 <h1>New comment</h1>
 
-<%= form_for([@post, @post.comments.build]) do |form| %>
+<%= form_for([@post, @post.comments.build]) do |form| %> <!-- изменил на форму как в рубишколе -->
 
   <!-- ====== Скрываем поля и подставим значения ======= -->
   <div>
-    <%= form.text_field :commentable_type, value: 'Post' %>
-    <%= form.text_field :commentable_id, value: @post.id %>
+    <%= form.hidden_field :commentable_type, value: 'Post' %>
+    <%= form.hidden_field :commentable_id, value: @post.id %>
   </div>
   <!-- ================================================== -->
 

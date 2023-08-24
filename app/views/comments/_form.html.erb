@@ -13,8 +13,13 @@
 
   <!-- ===================== добавлено ======================== -->
   <div>
-    <%= form.text_field :commentable_type %>
-    <%= form.text_field :commentable_id %>
+    <%= form.label :commentable_type, style: "display: block" %>
+    <%= form.select :commentable_type, ["Post", "Image"] %>
+  </div>
+
+  <div>
+    <%= form.label :commentable_id, style: "display: block" %>
+    <%= form.select :commentable_id, Post.all.map{|post| post.id} %>
   </div>
   <!-- ======================================================== -->
 
