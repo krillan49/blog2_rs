@@ -2,13 +2,17 @@
 
 <h1>Images</h1>
 
+<h5><%= link_to "New image", new_image_path %></h5>
+
 <div id="images">
   <% @images.each do |image| %>
-    <%= render image %>
+    <%# render image %> <!-- - это заменим на... -->
+    <div class="container">
+      <img src="<%= image.url %>" alt="image <%= image.id %>" class="img-fluid img-thumbnail rounded">
+    </div>
+    <!-- ======================================== -->
     <p>
       <%= link_to "Show this image", image %>
     </p>
   <% end %>
 </div>
-
-<%= link_to "New image", new_image_path %>
