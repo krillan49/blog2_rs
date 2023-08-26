@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
 
     if option_comment.commentable_type == 'Post'
       @comment = Post.find(option_comment.commentable_id).comments.new(comment_params)
-    else
+    elsif option_comment.commentable_type == 'Image'
       @comment = Image.find(option_comment.commentable_id).comments.new(comment_params)
     end
 
@@ -33,6 +33,13 @@ class CommentsController < ApplicationController
       if @comment.save
         @post = Post.find(params[:post_id])
         redirect_to post_path(@post) # get /posts/id  #show
+      else
+        render :new
+      end
+    elsif params[:image_id]
+      if @comment.save
+        @image = Image.find(params[:image_id])
+        redirect_to image_path(@image) # get /images/id  #show
       else
         render :new
       end
