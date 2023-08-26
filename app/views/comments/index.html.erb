@@ -7,6 +7,7 @@
 <div id="comments">
   <% @comments.each do |comment| %>
     <%= render comment %>
+    <p>ID: <%= comment.id %>; Type: <%= comment.commentable_type %>; TID: <%= comment.commentable_id %></p>
     <p>
       <%= link_to "Show this comment", comment %>
     </p>

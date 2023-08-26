@@ -1,6 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @comment %>
+<p>ID: <%= @comment.id %>; Type: <%= @comment.commentable_type %>; TID: <%= @comment.commentable_id %></p>
 
 <div>
   <%= link_to "Edit this comment", edit_comment_path(@comment) %> |

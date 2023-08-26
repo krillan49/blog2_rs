@@ -13,6 +13,8 @@ class CommentsController < ApplicationController
   # GET /comments/new
   def new
     @comment = Comment.new
+
+    @content_id_selector = (Post.all + Image.all).map{|cont| ["#{cont.class} #{cont.id}", cont.id]}
   end
 
   # GET /comments/1/edit

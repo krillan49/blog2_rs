@@ -19,7 +19,7 @@
 
   <div>
     <%= form.label :commentable_id, style: "display: block" %>
-    <%= form.select :commentable_id, Post.all.map{|post| post.id} %>
+    <%= form.select :commentable_id, @content_id_selector %>
   </div>
   <!-- ======================================================== -->
 

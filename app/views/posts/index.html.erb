@@ -6,6 +6,7 @@
 
 <div id="posts">
   <% @posts.each do |post| %>
+    <p class="text-center">ID: <%= post.id %></p>
     <%= render post %>
     <p>
       <%= link_to "Show this post", post %>
