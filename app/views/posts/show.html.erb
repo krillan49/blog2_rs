@@ -12,7 +12,7 @@
 
 
 <!-- ===================== comments _form.html.erb ======================== -->
-<h1>New comment</h1>
+<h3>New comment</h3>
 
 <%= form_for([@post, @post.comments.build]) do |form| %> <!-- изменил на форму как в рубишколе -->
 
@@ -43,7 +43,7 @@
 
 
 <!-- ===================== Вывод комментов ======================== -->
-<h1>All comments</h1>
+<h3>All comments</h3>
 
 <% if @post.comments.size < 2 %>
   <h4>Пока еще нет комментариев</h4>
