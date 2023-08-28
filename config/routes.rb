@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: "home#index"
 
   resources :images do
     resources :comments, only: [:create]
@@ -9,6 +10,4 @@ Rails.application.routes.draw do
   end
 
   resources :comments
-
-  root "home#index"
 end
