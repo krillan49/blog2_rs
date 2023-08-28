@@ -46,7 +46,15 @@
               <!-- <a class="nav-link" href="/about">About</a>  -->
             </li>
           </ul>
-          <!-- Devise: ссылки входа и выхода добавим тут -->
+          <!-- Devise: ссылки входа и выхода -->
+          <div class="d-flex">
+            <% if user_signed_in? %>
+              <div class="me-2"><%= current_user.username %></div>
+              <div><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></div>
+            <% else %>
+              <div><%= link_to "Sign In", new_user_session_path %></div>
+            <% end %>
+          </div>
         </div>
 
       </div>
