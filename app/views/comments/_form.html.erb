@@ -22,11 +22,12 @@
     <%= form.select :commentable_id, @content_id_selector %>
   </div>
   <!-- ======================================================== -->
-
+  <!-- ===================== девайс ======================== -->
   <div>
-    <%= form.label :author, style: "display: block" %>
-    <%= form.text_field :author %>
-  </div>
+    Author: <b><%= current_user.username %></b>
+    <%= form.hidden_field :author, value: current_user.username %>
+  </div> 
+  <!-- ======================================================== --> 
 
   <div>
     <%= form.label :body, style: "display: block" %>

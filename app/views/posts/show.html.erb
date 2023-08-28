@@ -12,30 +12,35 @@
 
 
 <!-- ===================== comments _form.html.erb ======================== -->
-<h3>New comment</h3>
+<% if user_signed_in? %>
 
-<%= form_for([@post, @post.comments.build]) do |form| %> <!-- изменил на форму как в рубишколе -->
+  <h3>New comment</h3>
 
-  <!-- ====== Скрываем поля и подставим значения ======= -->
-  <div>
-    <%= form.hidden_field :commentable_type, value: 'Post' %>
-    <%= form.hidden_field :commentable_id, value: @post.id %>
-  </div>
-  <!-- ================================================== -->
+  <%= form_for([@post, @post.comments.build]) do |form| %> <!-- изменил на форму как в рубишколе -->
 
-  <div>
-    <%= form.label :author, style: "display: block" %>
-    <%= form.text_field :author %>
-  </div>
+    <!-- ====== Скрываем поля и подставим значения ======= -->
+    <div>
+      <%= form.hidden_field :commentable_type, value: 'Post' %>
+      <%= form.hidden_field :commentable_id, value: @post.id %>
+    </div>
+    <!-- ================================================== -->
+    <!-- ===================== девайс ======================== -->
+    <div>
+      Author: <b><%= current_user.username %></b>
+      <%= form.hidden_field :author, value: current_user.username %>
+    </div> 
+    <!-- ======================================================== --> 
+    <div>
+      <%= form.label :body, style: "display: block" %>
+      <%= form.text_area :body %>
+    </div>
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
 
-  <div>
-    <%= form.label :body, style: "display: block" %>
-    <%= form.text_area :body %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+<% else %>
+  <h3>Войдите или зарегестрируйтесь чтобы оставить комментарий</h3>
 <% end %>
 
 <br>
@@ -45,7 +50,7 @@
 <!-- ===================== Вывод комментов ======================== -->
 <h3>All comments</h3>
 
-<% if @post.comments.size < 2 %>
+<% if @post.comments.size < 2 && @image.comments[-1].body == nil %>
   <h4>Пока еще нет комментариев</h4>
 <% end %>
 
