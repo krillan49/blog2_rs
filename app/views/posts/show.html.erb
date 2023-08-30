@@ -51,7 +51,7 @@
 <!-- ===================== Вывод комментов ======================== -->
 <h3>All comments</h3>
 
-<% if @post.comments.size < 2 && @image.comments[-1].body == nil %>
+<% if @post.comments.size < 2 && @post.comments[-1].body == nil %>
   <h4>Пока еще нет комментариев</h4>
 <% end %>
 
