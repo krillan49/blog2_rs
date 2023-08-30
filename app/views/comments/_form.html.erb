@@ -25,6 +25,13 @@
   <!-- ===================== девайс ======================== -->
   <div>
     Author: <b><%= current_user.username %></b>
+  </div>
+
+  <div>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div> 
+
+  <div> 
     <%= form.hidden_field :author, value: current_user.username %>
   </div> 
   <!-- ======================================================== --> 
