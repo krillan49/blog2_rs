@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!, only: %i[ new create edit update destroy ]
   before_action :set_comment, only: %i[ show edit update destroy ]
+  before_action :owner?, only: %i[edit destroy]
 
   # GET /comments or /comments.json
   def index
@@ -89,7 +90,13 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
   end
 
-  def comment_params # добавляем commentable поля
-    params.require(:comment).permit(:author, :body, :commentable_type, :commentable_id) 
+  def comment_params # добавляем commentable поля и user_id
+    params.require(:comment).permit(:author, :body, :commentable_type, :commentable_id, :user_id) 
+  end
+
+  def owner?
+    if current_user != @comment.user
+      redirect_back fallback_location: root_path, notice: 'User is not owner'
+    end
   end
 end

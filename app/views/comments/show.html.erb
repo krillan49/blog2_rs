@@ -4,8 +4,9 @@
 <p>ID: <%= @comment.id %>; Type: <%= @comment.commentable_type %>; TID: <%= @comment.commentable_id %></p>
 
 <div>
-  <%= link_to "Edit this comment", edit_comment_path(@comment) %> |
   <%= link_to "Back to comments", comments_path %>
-
-  <%= button_to "Destroy this comment", @comment, method: :delete %>
+  <% if current_user == @comment.user %>
+     | <%= link_to "Edit this comment", edit_comment_path(@comment) %>
+    <%= button_to "Destroy this comment", @comment, method: :delete %>
+  <% end %>
 </div>
