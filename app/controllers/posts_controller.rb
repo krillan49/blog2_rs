@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: %i[ new create edit update destroy ]
   before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :owner?, only: %i[edit destroy]
 
   # GET /posts or /posts.json
   def index
@@ -66,6 +67,12 @@ class PostsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def post_params
-    params.require(:post).permit(:author, :content)
+    params.require(:post).permit(:author, :content, :user_id)
+  end
+
+  def owner? # метод для проверки является ли юзер автором этого поста
+    if current_user != @post.user
+      redirect_back fallback_location: root_path, notice: 'User is not owner'
+    end
   end
 end

@@ -1,6 +1,7 @@
 class ImagesController < ApplicationController
   before_action :authenticate_user!, only: %i[ new create edit update destroy ]
   before_action :set_image, only: %i[ show edit update destroy ]
+  before_action :owner?, only: %i[edit destroy]
 
   # GET /images or /images.json
   def index
@@ -66,6 +67,12 @@ class ImagesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def image_params
-    params.require(:image).permit(:author, :url)
+    params.require(:image).permit(:author, :url, :user_id)
+  end
+
+  def owner? # метод для проверки является ли юзер автором этого изображения
+    if current_user != @image.user
+      redirect_back fallback_location: root_path, notice: 'User is not owner'
+    end
   end
 end
