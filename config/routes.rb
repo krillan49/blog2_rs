@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :posts do 
-    resources :comments, only: [:create]#, path_names: { :new => '' }
+    resources :comments, only: [:create]
   end
 
   resources :comments
