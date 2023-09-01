@@ -71,7 +71,7 @@ class ImagesController < ApplicationController
   end
 
   def owner? # метод для проверки является ли юзер автором этого изображения
-    if current_user != @image.user
+    if current_user != @image.user && !current_user.admin?
       redirect_back fallback_location: root_path, notice: 'User is not owner'
     end
   end

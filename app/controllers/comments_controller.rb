@@ -95,7 +95,7 @@ class CommentsController < ApplicationController
   end
 
   def owner?
-    if current_user != @comment.user
+    if current_user != @comment.user && !current_user.admin?
       redirect_back fallback_location: root_path, notice: 'User is not owner'
     end
   end

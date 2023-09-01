@@ -71,7 +71,7 @@ class PostsController < ApplicationController
   end
 
   def owner? # метод для проверки является ли юзер автором этого поста
-    if current_user != @post.user
+    if current_user != @post.user && !current_user.admin?
       redirect_back fallback_location: root_path, notice: 'User is not owner'
     end
   end
