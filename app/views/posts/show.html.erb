@@ -5,7 +5,7 @@
 
 <div>
   <%= link_to "Back to posts", posts_path %>
-  <% if user_signed_in? && (current_user == @post.user or current_user.try(:admin?)) %>
+  <% if have_access_to_content?(@post) %>
      | <%= link_to "Edit this post", edit_post_path(@post) %>
     <%= button_to "Destroy this post", @post, method: :delete %>
   <% end %>

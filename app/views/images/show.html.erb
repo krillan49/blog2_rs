@@ -9,7 +9,7 @@
 
 <div>
   <%= link_to "Back to images", images_path %>
-  <% if user_signed_in? && (current_user == @image.user or current_user.try(:admin?)) %>
+  <% if have_access_to_content?(@image) %>
      | <%= link_to "Edit this image", edit_image_path(@image) %>
     <%= button_to "Destroy this image", @image, method: :delete %>
   <% end %>
