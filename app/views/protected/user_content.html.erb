@@ -1,3 +1,47 @@
-<h1>User content</h1>
+<h1 class="text-center"><%= @user.username %> content</h1>
 
-<h4><%= @user.username %></h4>
+<hr>
+<h4><%= @user.username %> posts:</h4>
+<hr>
+
+<div id="posts">
+  <% @user.posts.each do |post| %>
+    <p>Post ID: <%= post.id %></p>
+    <%= render post %>
+    <p>
+      <%= link_to "Show this post", post %>
+    </p>
+  <% end %>
+</div>
+
+
+<hr>
+<h4><%= @user.username %> images:</h4>
+<hr>
+
+<div id="images">
+  <% @user.images.each do |image| %>
+    <div class="container">
+      <img src="<%= image.url %>" alt="image <%= image.id %>" class="img-fluid img-thumbnail rounded">
+    </div>
+    <p class="text-center">ID: <%= image.id %>; URL: <%= image.url %></p>
+    <p>
+      <%= link_to "Show this image", image %>
+    </p>
+  <% end %>
+</div>
+
+
+<hr>
+<h4><%= @user.username %> comments:</h4>
+<hr>
+
+<div id="comments">
+  <% @user.comments.each do |comment| %>
+    <%= render comment %>
+    <p>ID: <%= comment.id %>; Type: <%= comment.commentable_type %>; TID: <%= comment.commentable_id %></p>
+    <p>
+      <%= link_to "Show this comment", comment %>
+    </p>
+  <% end %>
+</div>
