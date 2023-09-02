@@ -1,8 +1,12 @@
 class ProtectedController < ApplicationController
-  before_action :admin?, only: %i[users_list]
+  before_action :admin?
 
-  def users_list
+  def users_list # get 'users_list'
     @users = User.all
+  end
+
+  def user_content # get 'protected/:id'
+    @user = User.find(params[:id])
   end
 
   private
