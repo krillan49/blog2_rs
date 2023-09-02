@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   end
 
   resources :comments
+
+  get 'users_list' => 'protected#users_list'
 end
