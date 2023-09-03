@@ -5,13 +5,32 @@
 <h5 class="text-center"><%= link_to "New comment", new_comment_path %></h5><br>
 
 <div id="comments">
-  <% @comments.each do |comment| %>
-    <%= render comment %>
-    <p>ID: <%= comment.id %>; Type: <%= comment.commentable_type %>; TID: <%= comment.commentable_id %></p>
-    <p>
-      <%= link_to "Show this comment", comment %>
-    </p>
-  <% end %>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead> 
+        <tr> 
+          <th>Автор</th> 
+          <th>Коммент</th> 
+          <th>ID</th> 
+          <th>Type</th> 
+          <th>TID</th> 
+          <th>Ссылка</th> 
+        </tr> 
+      </thead>
+      <tbody>
+        <% @comments.each do |comment| %>
+          <tr> 
+            <td><%= comment.author %></td> 
+            <td><%= comment.body %></td> 
+            <td><%= comment.id %></td> 
+            <th><%= comment.commentable_type %></th> 
+            <th><%= comment.commentable_id %></th> 
+            <th><%= link_to "Show this comment", comment %></th>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 

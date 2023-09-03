@@ -6,14 +6,11 @@
 
 <div id="images">
   <% @images.each do |image| %>
-    <%# render image %> <!-- - это заменим на... -->
+    <br><hr><br>
+    <p class="text-center">Author: <b><%= image.author %></b></p>
     <div class="container">
       <img src="<%= image.url %>" alt="image <%= image.id %>" class="img-fluid img-thumbnail rounded">
     </div>
-    <p class="text-center">ID: <%= image.id %>; Author: <%= image.author %>; URL: <%= image.url %></p>
-    <!-- ======================================== -->
-    <p>
-      <%= link_to "Show this image", image %>
-    </p>
+    <p class="text-center"><%= link_to "Show this image", image %></p>
   <% end %>
 </div>
