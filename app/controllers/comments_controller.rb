@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!, only: %i[ new create edit update destroy ]
   before_action :set_comment, only: %i[ show edit update destroy ]
   before_action :owner?, only: %i[edit destroy]
+  before_action :set_id_for_selector_in_comment_form, only: %i[new edit create update]
 
   # GET /comments or /comments.json
   def index
@@ -15,12 +16,10 @@ class CommentsController < ApplicationController
   # GET /comments/new
   def new
     @comment = Comment.new
-    @content_id_selector = (Post.all + Image.all).map{|cont| ["#{cont.class} #{cont.id}", cont.id]}
   end
 
   # GET /comments/1/edit
   def edit
-    @content_id_selector = (Post.all + Image.all).map{|cont| ["#{cont.class} #{cont.id}", cont.id]}
   end
 
   # POST /comments or /comments/:post_id/comments
@@ -85,6 +84,10 @@ class CommentsController < ApplicationController
   end
 
   private
+
+  def set_id_for_selector_in_comment_form
+    @content_id_selector = (Post.all + Image.all).map{|cont| ["#{cont.class} #{cont.id}", cont.id]}
+  end
 
   def set_comment
     @comment = Comment.find(params[:id])
