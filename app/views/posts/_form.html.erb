@@ -1,8 +1,8 @@
 <%= form_with(model: post) do |form| %>
+
   <% if post.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
       <ul>
         <% post.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,21 +11,15 @@
     </div>
   <% end %>
 
-  <div>
-    <b><%= current_user.username %></b>
-  </div>
-
-  <div>
+  <div class="mb-3">
+    <p>Автор: <b><%= current_user.username %></b></p>
     <%= form.hidden_field :user_id, value: current_user.id %>
-  </div>
-
-  <div>
     <%= form.hidden_field :author, value: current_user.username %>
   </div>
 
-  <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.text_area :content %>
+  <div class="mb-3">
+    <%= form.label :content, class: 'form-label' %>
+    <%= form.text_area :content, class: 'form-control' %>
   </div>
 
   <div>

@@ -1,9 +1,7 @@
-<h1>New image</h1>
+<h1 class="text-center">New image</h1>
+
+<h5 class="text-center">
+  <%= link_to "Back to images", images_path %>
+</h5>
 
 <%= render "form", image: @image %>
-
-<br>
-
-<div>
-  <%= link_to "Back to images", images_path %>
-</div>

@@ -14,34 +14,28 @@
 
 <!-- ===================== comments _form.html.erb ======================== -->
 <% if user_signed_in? %>
+  <hr>
 
   <h3>New comment</h3>
 
   <%= form_for([@post, @post.comments.build]) do |form| %> <!-- изменил на форму как в рубишколе -->
 
     <!-- ====== Скрываем поля и подставим значения ======= -->
-    <div>
+    <div class="mb-3">
+      Author: <b><%= current_user.username %></b>
       <%= form.hidden_field :commentable_type, value: 'Post' %>
       <%= form.hidden_field :commentable_id, value: @post.id %>
-    </div>
-    <!-- ================================================== -->
-    <!-- ===================== девайс ======================== -->
-    <div>
-      Author: <b><%= current_user.username %></b>
-    </div>
-  
-    <div>
+      <!-- ===================== девайс ======================== -->
       <%= form.hidden_field :user_id, value: current_user.id %>
-    </div> 
-  
-    <div> 
       <%= form.hidden_field :author, value: current_user.username %>
     </div>
-    <!-- ======================================================== --> 
-    <div>
-      <%= form.label :body, style: "display: block" %>
-      <%= form.text_area :body %>
+    <!-- ================================================== -->
+
+    <div class="mb-3">
+      <%= form.label :body, class: 'form-label' %>
+      <%= form.text_area :body, class: 'form-control' %>
     </div>
+
     <div>
       <%= form.submit %>
     </div>
@@ -50,12 +44,11 @@
 <% else %>
   <h3>Войдите или зарегестрируйтесь чтобы оставить комментарий</h3>
 <% end %>
-
-<br>
 <!-- ====================================================================== -->
 
 
 <!-- ===================== Вывод комментов ======================== -->
+<hr>
 <h3>All comments</h3>
 
 <% if @post.comments.size < 2 && @post.comments[-1].body == nil %>

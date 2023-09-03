@@ -1,4 +1,5 @@
 <%= form_with(model: image) do |form| %>
+
   <% if image.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(image.errors.count, "error") %> prohibited this image from being saved:</h2>
@@ -11,21 +12,15 @@
     </div>
   <% end %>
 
-  <div>
-    <b><%= current_user.username %></b>
-  </div>
-
-  <div>
+  <div class="mb-3">
+    <p>Автор: <b><%= current_user.username %></b></p>
     <%= form.hidden_field :user_id, value: current_user.id %>
-  </div>
-
-  <div>
     <%= form.hidden_field :author, value: current_user.username %>
   </div>
 
-  <div>
-    <%= form.label :url, style: "display: block" %>
-    <%= form.text_area :url %>
+  <div class="mb-3">
+    <%= form.label :url, class: 'form-label' %>
+    <%= form.text_area :url, class: 'form-control' %>
   </div>
 
   <div>

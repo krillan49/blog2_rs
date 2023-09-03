@@ -1,10 +1,8 @@
-<h1>Editing image</h1>
+<h1 class="text-center">Editing image</h1>
 
-<%= render "form", image: @image %>
-
-<br>
-
-<div>
+<h5 class="text-center">
   <%= link_to "Show this image", @image %> |
   <%= link_to "Back to images", images_path %>
-</div>
+</h5>
+
+<%= render "form", image: @image %>

@@ -1,10 +1,8 @@
-<h1>Editing post</h1>
+<h1 class="text-center">Editing post</h1>
 
-<%= render "form", post: @post %>
-
-<br>
-
-<div>
+<h5 class="text-center">
   <%= link_to "Show this post", @post %> |
   <%= link_to "Back to posts", posts_path %>
-</div>
+</h5>
+
+<%= render "form", post: @post %>
