@@ -38,26 +38,26 @@
               </li>
             <% end %>
             <li class="nav-item">
-              <!-- <a class="nav-link active" aria-current="page" href="/posts">Posts</a> -->
               <a class="nav-link" href="/posts">Posts</a>
             </li>
             <li class="nav-item"> 
               <a class="nav-link" href="/images">Images</a> 
             </li>
-            <li class="nav-item"> 
-              <a class="nav-link" href="/comments">Comments</a> 
+            <li class="nav-item dropdown"> 
+              <a class="nav-link" href="/comments">Comments</a>
             </li>
             <li class="nav-item"> 
               <!-- <a class="nav-link" href="/about">About</a>  -->
             </li>
           </ul>
           <!-- Devise: ссылки входа и выхода -->
-          <div class="d-flex">
+          <div class="d-flex header_sign">
             <% if user_signed_in? %>
-              <div class="me-2"><%= current_user.username %></div>
+              <div class="me-3 header_username"><%= current_user.username %></div>
               <div><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></div>
             <% else %>
-              <div><%= link_to "Sign In", new_user_session_path %></div>
+              <div class="me-3"><%= link_to "Sign In", new_user_session_path %></div>
+              <div><%= link_to "Sign Up", new_user_registration_path %></div>
             <% end %>
           </div>
         </div>
