@@ -4,9 +4,11 @@
 <p>ID: <%= @comment.id %>; Type: <%= @comment.commentable_type %>; TID: <%= @comment.commentable_id %></p>
 
 <div>
-  <%= link_to "Back to comments", comments_path %>
+  <% if admin? %>
+    <%= link_to "Back to comments", comments_path %> | 
+  <% end %>
   <% if have_access_to_content?(@comment) %>
-     | <%= link_to "Edit this comment", edit_comment_path(@comment) %>
+    <%= link_to "Edit this comment", edit_comment_path(@comment) %>
     <%= button_to "Destroy this comment", @comment, method: :delete %>
   <% end %>
 </div>

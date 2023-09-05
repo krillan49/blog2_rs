@@ -55,10 +55,13 @@
   <h4>Пока еще нет комментариев</h4>
 <% end %>
 
-<% @post.comments.each do |comment| %>
+<% @post.comments.reverse.each do |comment| %>
   <% if comment.body && comment.body.size > 0 %> <!-- Избавляемся от comments.build -->
     <h6>Author: <%= comment.author %></h6>
     <p>Body: <%= comment.body %></p>
+    <% if have_access_to_content?(comment) %>
+      <%= link_to "Show comment", comment_path(comment) %>
+    <% end %>
     <hr>
   <% end %>
 <% end %>

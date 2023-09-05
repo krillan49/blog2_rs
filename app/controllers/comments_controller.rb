@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!, only: %i[ new create edit update destroy ]
   before_action :set_comment, only: %i[ show edit update destroy ]
   before_action :owner?, only: %i[edit destroy]
+  before_action :admin?, only: %i[index]
   before_action :set_id_for_selector_in_comment_form, only: %i[new edit create update]
 
   # GET /comments or /comments.json
@@ -100,6 +101,12 @@ class CommentsController < ApplicationController
   def owner?
     if current_user != @comment.user && !current_user.admin?
       redirect_back fallback_location: root_path, notice: 'User is not owner'
+    end
+  end
+
+  def admin?
+    unless user_signed_in? && current_user.try(:admin?)
+      redirect_back fallback_location: root_path, notice: 'User is not admin'
     end
   end
 end
