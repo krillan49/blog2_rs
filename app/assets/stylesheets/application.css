@@ -28,6 +28,51 @@ a:hover {
   text-shadow: 1px 1px 10px rgb(30, 136, 171);
 }
 
+textarea:hover, input:hover, select:hover{
+  border-color: rgb(30, 136, 171);
+}
+textarea:focus, input:focus, select:focus{
+  border-color: rgb(30, 136, 171);
+  box-shadow: 0 0 8px rgba(30, 136, 171, 0.6) !important;
+}
+.textarea_big {
+  height: 20rem;
+}
+@media (max-width: 1000px) {
+  .textarea_big {
+    height: 15rem;
+  }
+}
+@media (max-width: 500px) {
+  .textarea_big {
+    height: 10rem;
+  }
+}
+.textarea_medium {
+  height: 10rem;
+}
+
+/* input[type=submit]  - это все кнопки форм кроме destroy */
+input[type=submit], button[type=submit] {
+  border: none;
+  border-radius: 5px;
+  border: 2px solid rgb(183, 224, 235);
+  padding: .3rem .5rem .3rem .5rem;
+  font-weight: 500;
+  color: rgb(30, 136, 171);
+  background-color: rgb(183, 224, 235);
+}
+input[type=submit]:hover, button[type=submit]:hover {
+  color: rgb(5, 105, 135);
+  text-shadow: 1px 1px 10px rgb(251, 251, 251);
+  border-color: rgb(5, 105, 135);
+}
+input[type=submit]:active, button[type=submit]:active {
+  color: rgb(5, 105, 135);
+  border-color: rgb(5, 105, 135);
+  background-color: rgb(251, 251, 251);
+}
+
  /* ==================================== */
  /* Header navbar -- application.html.erb */
  /* ==================================== */
@@ -62,6 +107,11 @@ a.navbar-brand:hover, a.nav-link:hover {
   font-weight: 800;
   font-size: 1.5rem;
   letter-spacing: 1px;
+}
+@media (max-width: 350px) {
+  .navbar .navbar-brand{
+    font-size: 1rem;
+  }
 }
 
 .header_sign a {
