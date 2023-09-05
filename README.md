@@ -2,9 +2,9 @@
 
 Ruby, Rails, Devise, Rspec.
 
-[Учебный проект на Ruby/Rails c курса Rubyschool](https://rubyschool.us/)
+["Выпускной" учебный проект по итогам курса Rubyschool](https://rubyschool.us/)
 
-For scaffolding and polymorphism training
+Учебный проект по итогам курса Rubyschool для обобщения и закрепления пройденного материала по темам: 
 
 
 * Ruby version 3.1.2p20
@@ -32,9 +32,18 @@ rails s
 
 4. Open in your browser: http://localhost:3000/
 
-Дополнено/изменено:
+5. Add admin user with("..." - your data):
+```bash
+rails console
+User.create(email: '...', username: '...', password: '...', password_confirmation: '...', admin: true)
+```
+
+Применялось:
 -
-* Bootstrap 5
-* Комменты имеют 2 вида маршрутов, обычные resourses и вложенные в posts и images для create, соотв экшен create контроллера comment различает из какого вида пришла форма и обрабатывает в соотв с этим.
-* Комменты принадлежат и полиморфному commentable и юзеру(devise)
+* Генераторы: scaffold, controller, migration, devise
+* Ассоциации: polymorphism, 1 to many. Комменты принадлежат и полиморфному commentable и юзеру(devise)
+* Комменты имеют 2 вида маршрутов: обычные resourses; вложенные в posts и images для create, соотв экшен create контроллера comment обрабатывает в соотв с тем из какого вида пришла форма.
+* Есть возможность назначить админа, который имеет расширеные права и доступ к различной статистике
+* Bootstrap 5 + CSS
+
 
