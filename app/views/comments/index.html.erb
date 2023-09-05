@@ -9,23 +9,37 @@
     <table class="table table-striped">
       <thead> 
         <tr> 
-          <th>Автор</th> 
-          <th>Коммент</th> 
-          <th>ID</th> 
+          <th>Автор</th>
+          <th>AID</th>
+          <th>Коммент(Show)</th> 
+          <th>CID</th> 
           <th>Type</th> 
-          <th>TID</th> 
-          <th>Ссылка</th> 
+          <th>TID</th>
+          <th>Delete</th> 
         </tr> 
       </thead>
       <tbody>
         <% @comments.each do |comment| %>
           <tr> 
-            <td><%= comment.author %></td> 
-            <td><%= comment.body %></td> 
+            <td><!-- show user -->
+              <% if comment.user %>
+                <a href="/protected/<%= comment.user.id %>"><%= comment.author %></a>
+              <% else %>
+                <%= comment.author %>(unreg)
+              <% end %>
+            </td>
+            <td><%= comment.user ? comment.user.id : '-' %></td> 
+            <td><%= link_to comment.body, comment %></td> <!-- show comment -->
             <td><%= comment.id %></td> 
-            <th><%= comment.commentable_type %></th> 
-            <th><%= comment.commentable_id %></th> 
-            <th><%= link_to "Show this comment", comment %></th>
+            <td><!-- show content -->
+              <% if comment.commentable %>
+                <%= link_to comment.commentable_type, comment.commentable %>
+              <% else %>
+                <%= comment.commentable_type %>(deleted)
+              <% end %>
+            </td>
+            <td><%= comment.commentable_id %></td> 
+            <td><%= button_to "Destroy this comment", comment, method: :delete, class: 'btn btn-link'%></td>
           </tr>
         <% end %>
       </tbody>
