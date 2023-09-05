@@ -12,22 +12,20 @@
         <th>Постов</th>
         <th>Картинок</th>
         <th>Комментариев</th>
-        <th>Подробнее</th>
       </tr> 
     </thead>
     <tbody>
       <% @users.each do |user| %>
         <tr>
-          <td><%= user.username %></td>
+          <td>
+            <a href="/protected/<%= user.id %>"><%= user.username %></a>
+          </td>
           <td><%= user.admin ? 'Admin' : 'User' %></td>
           <td><%= user.id %></td>
           <td><%= user.email %></td>
           <td><%= user.posts.size %></td> 
           <td><%= user.images.size %></td> 
-          <td><%= user.comments.size %></td>
-          <td>
-            <a href="/protected/<%= user.id %>">Подробнее</a>
-          </td>   
+          <td><%= user.comments.size %></td>   
         </tr>
       <% end %>
     </tbody>
