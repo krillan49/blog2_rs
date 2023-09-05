@@ -8,7 +8,7 @@
     <%= link_to "Back to comments", comments_path %> | 
   <% end %>
   <% if have_access_to_content?(@comment) %>
-    <%= link_to "Edit this comment", edit_comment_path(@comment) %>
-    <%= button_to "Destroy this comment", @comment, method: :delete %>
+    <%= link_to "Edit this comment", edit_comment_path(@comment) %> | 
+    <%= button_to "Destroy this comment", @comment, method: :delete, class: 'btn btn-link' %>
   <% end %>
 </div>

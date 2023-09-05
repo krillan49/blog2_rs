@@ -18,15 +18,27 @@ body {
   margin-top: 6rem;
 }
 
-a {
+/* ссылки и кнопки удаления стилизованные в ссылки */
+a, .btn-link {
   color: rgb(30, 136, 171);
   text-decoration: none;
   font-weight: 500;
 }
-a:hover {
+a:hover, .btn-link:hover {
   color: rgb(5, 105, 135);
   text-shadow: 1px 1px 10px rgb(30, 136, 171);
 }
+
+.btn-link {
+  margin: 0;
+  margin-bottom: .1rem;
+  padding: 0;
+}
+/* тк форма блок изменяем ее отображение в строковый тип чтобы кнопка не занимала линию */
+.button_to { 
+  display: inline;
+}
+
 
 textarea:hover, input:hover, select:hover{
   border-color: rgb(30, 136, 171);
@@ -53,7 +65,7 @@ textarea:focus, input:focus, select:focus{
 }
 
 /* input[type=submit]  - это все кнопки форм кроме destroy */
-input[type=submit], button[type=submit] {
+input[type=submit] {
   border: none;
   border-radius: 5px;
   border: 2px solid rgb(183, 224, 235);
@@ -62,16 +74,17 @@ input[type=submit], button[type=submit] {
   color: rgb(30, 136, 171);
   background-color: rgb(183, 224, 235);
 }
-input[type=submit]:hover, button[type=submit]:hover {
+input[type=submit]:hover {
   color: rgb(5, 105, 135);
   text-shadow: 1px 1px 10px rgb(251, 251, 251);
   border-color: rgb(5, 105, 135);
 }
-input[type=submit]:active, button[type=submit]:active {
+input[type=submit]:active {
   color: rgb(5, 105, 135);
   border-color: rgb(5, 105, 135);
   background-color: rgb(251, 251, 251);
 }
+
 
  /* ==================================== */
  /* Header navbar -- application.html.erb */
