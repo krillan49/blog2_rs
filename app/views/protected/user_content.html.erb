@@ -1,39 +1,45 @@
 <h1 class="text-center"><%= @user.username %> content</h1>
 
 <hr>
-<h4><%= @user.username %> posts:</h4>
+<h4 class="text-center"><%= @user.username %> posts:</h4>
 <hr>
 
 <div id="posts">
-  <% @user.posts.each do |post| %>
-    <p>Post ID: <%= post.id %></p>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
+  <% @user.posts.reverse.each do |post| %>
+    <br>
+    <p class="text-center"><b>Post ID:</b> <%= post.id %></p>
+    <p><b>Content:</b> <%= post.content %></p>
+    <div class="text-center">
+      <%= link_to "Show this post", post %> | 
+      <%= button_to "Destroy this post", post, method: :delete, class: 'btn btn-link' %>
+    </div>
+    <br>
+    <hr>
   <% end %>
 </div>
 
 
-<hr>
-<h4><%= @user.username %> images:</h4>
+<h4 class="text-center"><%= @user.username %> images:</h4>
 <hr>
 
 <div id="images">
-  <% @user.images.each do |image| %>
+  <% @user.images.reverse.each do |image| %>
+    <br>
+    <p class="text-center"><b>Image ID:</b> <%= image.id %>; <b>URL:</b> <%= image.url %></p>
     <div class="container">
       <img src="<%= image.url %>" alt="image <%= image.id %>" class="img-fluid img-thumbnail rounded">
     </div>
-    <p class="text-center">ID: <%= image.id %>; URL: <%= image.url %></p>
-    <p>
-      <%= link_to "Show this image", image %>
-    </p>
+    <div class="text-center">
+      <%= link_to "Show this image", image %> | 
+      <%= button_to "Destroy this image", image, method: :delete, class: 'btn btn-link' %>
+    </div>
+    <br>
+    <hr>
   <% end %>
 </div>
 
 
-<hr>
-<h4><%= @user.username %> comments:</h4>
+<h4 class="text-center"><%= @user.username %> comments:</h4>
 <hr>
 
 <div id="comments">
@@ -50,7 +56,7 @@
         </tr> 
       </thead>
       <tbody>
-        <% @user.comments.each do |comment| %>
+        <% @user.comments.reverse.each do |comment| %>
           <tr> 
             <td><%= link_to comment.body, comment %></td> <!-- show comment -->
             <td><%= comment.id %></td> 

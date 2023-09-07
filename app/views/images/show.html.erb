@@ -1,13 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
+<h1 class="text-center">Author: <%= @image.author %></h1>
+<br>
 <%# render @image %> <!-- - это заменим на... -->
 <div class="container">
   <img src="<%= @image.url %>" alt="image <%= @image.id %>" class="img-fluid img-thumbnail rounded">
 </div>
-<p class="text-center">ID: <%= @image.id %>; Author: <%= @image.author %>; URL: <%= @image.url %></p>
 <!-- ======================================== -->
+<br>
 
-<div>
+<div class="text-center">
   <%= link_to "Back to images", images_path %>
   <% if have_access_to_content?(@image) %>
      | <%= link_to "Edit this image", edit_image_path(@image) %>
@@ -20,13 +22,12 @@
 <% if user_signed_in? %>
   <hr>
 
-  <h3>New comment</h3>
-
   <%= form_for([@image, @image.comments.build]) do |form| %> <!-- изменил на форму как в рубишколе -->
+
+    <h5>You can add new comment here</h5>
 
     <!-- ====== Скрываем поля и подставим значения ======= -->
     <div class="mb-3">
-      Author: <b><%= current_user.username %></b>
       <%= form.hidden_field :commentable_type, value: 'Image' %>
       <%= form.hidden_field :commentable_id, value: @image.id %>
       <!-- ===================== девайс ======================== -->
@@ -36,7 +37,6 @@
     <!-- ================================================== -->
 
     <div class="mb-3">
-      <%= form.label :body, class: 'form-label' %>
       <%= form.text_area :body, class: 'form-control textarea_medium' %>
     </div>
 
@@ -52,7 +52,6 @@
 
 <!-- ===================== Вывод комментов ======================== -->
 <hr>
-<h3>All comments</h3>
 
 <% if @image.comments.size < 2 && @image.comments[-1].body == nil %>
   <h4>Пока еще нет комментариев</h4>

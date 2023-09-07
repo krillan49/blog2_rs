@@ -1,9 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
-<p class="text-center">ID: <%= @post.id %></p>
-<%= render @post %>
-
-<div>
+<h1 class="text-center">Author: <%= @post.author %></h1>
+<br>
+<div><%= @post.content %></div>
+<br>
+<div class="text-center">
   <%= link_to "Back to posts", posts_path %>
   <% if have_access_to_content?(@post) %>
      | <%= link_to "Edit this post", edit_post_path(@post) %>
@@ -16,13 +17,12 @@
 <% if user_signed_in? %>
   <hr>
 
-  <h3>New comment</h3>
-
   <%= form_for([@post, @post.comments.build]) do |form| %> <!-- изменил на форму как в рубишколе -->
+
+    <h5>You can add new comment here</h5>
 
     <!-- ====== Скрываем поля и подставим значения ======= -->
     <div class="mb-3">
-      Author: <b><%= current_user.username %></b>
       <%= form.hidden_field :commentable_type, value: 'Post' %>
       <%= form.hidden_field :commentable_id, value: @post.id %>
       <!-- ===================== девайс ======================== -->
@@ -32,7 +32,6 @@
     <!-- ================================================== -->
 
     <div class="mb-3">
-      <%= form.label :body, class: 'form-label' %>
       <%= form.text_area :body, class: 'form-control textarea_medium' %>
     </div>
 
@@ -49,7 +48,6 @@
 
 <!-- ===================== Вывод комментов ======================== -->
 <hr>
-<h3>All comments</h3>
 
 <% if @post.comments.size < 2 && @post.comments[-1].body == nil %>
   <h4>Пока еще нет комментариев</h4>

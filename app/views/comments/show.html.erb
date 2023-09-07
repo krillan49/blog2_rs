@@ -1,9 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @comment %>
-<p>ID: <%= @comment.id %>; Type: <%= @comment.commentable_type %>; TID: <%= @comment.commentable_id %></p>
+<h1 class="text-center">Author: <%= @comment.author %></h1>
+<br>
+<p class="text-center"><b>Body:</b> <%= @comment.body %></p>
+<p class="text-center"><b>ID:</b> <%= @comment.id %>; 
+  <b>Type:</b> <%= @comment.commentable_type %>; 
+  <b>TID:</b> <%= @comment.commentable_id %>
+</p>
 
-<div>
+<div class="text-center">
   <% if admin? %>
     <%= link_to "Back to comments", comments_path %> | 
   <% end %>
