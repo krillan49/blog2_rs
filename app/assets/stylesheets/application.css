@@ -86,9 +86,24 @@ input[type=submit]:active {
 }
 
 
- /* ==================================== */
- /* Header navbar -- application.html.erb */
- /* ==================================== */
+/* ==================================== */
+/* notice */
+/* ==================================== */
+
+#notice {
+  color: rgb(251, 251, 251);
+  background-color: rgb(5, 105, 135);
+}
+
+#notice_alert {
+  color: rgb(251, 251, 251);
+  background-color: rgb(128, 6, 59);
+}
+
+
+/* ==================================== */
+/* Header navbar -- application.html.erb */
+/* ==================================== */
 
 .navbar {
   font-weight: 500;
