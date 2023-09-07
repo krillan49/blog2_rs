@@ -1,7 +1,7 @@
 <%= form_with(model: post) do |form| %>
 
   <% if post.errors.any? %>
-    <div style="color: red">
+    <div class="error_form_message">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
       <ul>
         <% post.errors.each do |error| %>

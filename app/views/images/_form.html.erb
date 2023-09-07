@@ -1,7 +1,7 @@
 <%= form_with(model: image) do |form| %>
 
   <% if image.errors.any? %>
-    <div style="color: red">
+    <div class="error_form_message">
       <h2><%= pluralize(image.errors.count, "error") %> prohibited this image from being saved:</h2>
 
       <ul>

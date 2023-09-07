@@ -1,5 +1,6 @@
 <% if resource.errors.any? %>
-  <div id="error_explanation" data-turbo-cache="false">
+  <div id="error_explanation" data-turbo-cache="false" class="error_form_message">
+    <!-- class="error_form_message" - добавлено -->
     <h2>
       <%= I18n.t("errors.messages.not_saved",
                  count: resource.errors.count,

@@ -44,7 +44,7 @@ textarea:hover, input:hover, select:hover{
   border-color: rgb(30, 136, 171);
 }
 textarea:focus, input:focus, select:focus{
-  border-color: rgb(30, 136, 171);
+  border-color: rgb(30, 136, 171) !important;
   box-shadow: 0 0 8px rgba(30, 136, 171, 0.6) !important;
 }
 .textarea_big {
@@ -87,7 +87,7 @@ input[type=submit]:active {
 
 
 /* ==================================== */
-/* notice */
+/* notice and errors mesages */
 /* ==================================== */
 
 #notice {
@@ -97,7 +97,11 @@ input[type=submit]:active {
 
 #notice_alert {
   color: rgb(251, 251, 251);
-  background-color: rgb(128, 6, 59);
+  background-color: rgb(202, 42, 117);
+}
+
+.error_form_message {
+  color: rgb(202, 42, 117);
 }
 
 

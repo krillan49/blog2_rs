@@ -1,7 +1,7 @@
 <%= form_with(model: comment) do |form| %>
 
   <% if comment.errors.any? %>
-    <div style="color: red">
+    <div class="error_form_message">
       <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
       <ul>
         <% comment.errors.each do |error| %>
