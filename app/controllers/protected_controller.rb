@@ -13,7 +13,8 @@ class ProtectedController < ApplicationController
 
   def admin?
     unless user_signed_in? && current_user.try(:admin?)
-      redirect_back fallback_location: root_path, notice: 'User is not admin'
+      # redirect_back fallback_location: root_path, notice: 'User is not admin'
+      redirect_to root_path, notice: 'User is not admin'
     end
   end
 end
