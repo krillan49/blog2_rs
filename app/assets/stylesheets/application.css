@@ -14,9 +14,8 @@
  *= require_self
 */
 
-body {
-  margin-top: 6rem;
-}
+/* body {
+} */
 
 /* ссылки и кнопки удаления стилизованные в ссылки */
 a, .btn-link {
@@ -109,6 +108,10 @@ input[type=submit]:active {
 /* Header navbar -- application.html.erb */
 /* ==================================== */
 
+#offset_header { /* блок для отступа тк шапка фиксед */
+  height: 6rem;
+}
+
 .navbar {
   font-weight: 500;
   padding-top: 1rem; padding-bottom: 1rem;
@@ -156,3 +159,40 @@ a.navbar-brand:hover, a.nav-link:hover {
 .header_username{
   font-size: 1.2rem;
 }
+
+
+/* ==================================== */
+/* footer -- application.html.erb */
+/* ==================================== */
+
+#offset_footer { /* блок для отступа */
+  height: 5rem;
+}
+
+footer {
+  padding-top: 3rem;
+  color: #ccc;
+  border-top: 2px solid rgb(183, 224, 235);
+}
+
+.social a {
+  padding: 1rem;
+  font-size: 3rem;
+  color: rgb(157, 206, 220);
+}
+.social a:hover {
+  color:rgb(5, 105, 135);
+  text-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*  */
