@@ -1,21 +1,22 @@
-<h1 class="text-center">Contents</h1>
+<h1 class="text-center"><%= t('.title') %></h1>
 
 <h5 class="text-center">
-  <%= link_to "New post", new_post_path %> | <%= link_to "New image", new_image_path %>
+  <%= link_to t('links.new_post'), new_post_path %> | 
+  <%= link_to t('links.new_image'), new_image_path %>
 </h5>
 
 <div> 
   <% @contents.each do |content| %>
     <br><hr><br>
-    <p class="text-center">Author: <b><%= content.author %></b></p>
+    <p class="text-center"><%= t('.author') %> <b><%= content.author %></b></p>
     <% if content.class == Image %>
       <div class="container">
         <img src="<%= content.url %>" alt="image <%= content.id %>" class="img-fluid img-thumbnail rounded">
       </div>
-      <p class="text-center"><%= link_to "Show this image", content %></p>
+      <p class="text-center"><%= link_to t('links.show_image'), content %></p>
     <% elsif content.class == Post %>
     <p><%= content.content %></p>
-      <p class="text-center"><%= link_to "Show this post", content %></p>
+      <p class="text-center"><%= link_to t('links.show_post'), content %></p>
     <% end %>
   <% end %>
 </div>
