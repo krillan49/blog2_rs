@@ -1,17 +1,17 @@
-<h1 class="text-center"><%= @user.username %> content</h1>
+<h1 class="text-center"><%= @user.username %> <%= t('.title') %></h1>
 
 <hr>
-<h4 class="text-center"><%= @user.username %> posts:</h4>
+<h4 class="text-center"><%= @user.username %> <%= t('.posts') %></h4>
 <hr>
 
 <div id="posts">
   <% @user.posts.reverse.each do |post| %>
     <br>
     <p class="text-center"><b>Post ID:</b> <%= post.id %></p>
-    <p><b>Content:</b> <%= post.content %></p>
+    <p><b><%= t('.content') %></b> <%= post.content %></p>
     <div class="text-center">
-      <%= link_to "Show this post", post %> | 
-      <%= button_to "Destroy this post", post, method: :delete, class: 'btn btn-link' %>
+      <%= link_to t('links.show_post'), post %> | 
+      <%= button_to t('links.destroy_post'), post, method: :delete, class: 'btn btn-link' %>
     </div>
     <br>
     <hr>
@@ -19,7 +19,7 @@
 </div>
 
 
-<h4 class="text-center"><%= @user.username %> images:</h4>
+<h4 class="text-center"><%= @user.username %> <%= t('.images') %></h4>
 <hr>
 
 <div id="images">
@@ -30,8 +30,8 @@
       <img src="<%= image.url %>" alt="image <%= image.id %>" class="img-fluid img-thumbnail rounded">
     </div>
     <div class="text-center">
-      <%= link_to "Show this image", image %> | 
-      <%= button_to "Destroy this image", image, method: :delete, class: 'btn btn-link' %>
+      <%= link_to t('links.show_image'), image %> | 
+      <%= button_to t('links.destroy_image'), image, method: :delete, class: 'btn btn-link' %>
     </div>
     <br>
     <hr>
@@ -39,7 +39,7 @@
 </div>
 
 
-<h4 class="text-center"><%= @user.username %> comments:</h4>
+<h4 class="text-center"><%= @user.username %> <%= t('.comments') %></h4>
 <hr>
 
 <div id="comments">
@@ -48,11 +48,11 @@
     <table class="table table-striped">
       <thead> 
         <tr> 
-          <th>Коммент(Show)</th> 
+          <th><%= t('.table.comment') %></th> 
           <th>CID</th> 
-          <th>Type</th> 
+          <th><%= t('.table.type') %></th> 
           <th>TID</th>
-          <th>Delete</th> 
+          <th><%= t('.table.delete') %></th> 
         </tr> 
       </thead>
       <tbody>
@@ -64,11 +64,13 @@
               <% if comment.commentable %>
                 <%= link_to comment.commentable_type, comment.commentable %>
               <% else %>
-                <%= comment.commentable_type %>(deleted)
+                <%= comment.commentable_type %><%= t('.table.deleted') %>
               <% end %>
             </td>
             <td><%= comment.commentable_id %></td> 
-            <td><%= button_to "Destroy this comment", comment, method: :delete, class: 'btn btn-link'%></td>
+            <td>
+              <%= button_to t('links.destroy_comment'), comment, method: :delete, class: 'btn btn-link'%>
+            </td>
           </tr>
         <% end %>
       </tbody>

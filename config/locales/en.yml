@@ -5,8 +5,11 @@ en:
   links:
     new_post: New post$
     show_post: Show this post$
+    destroy_post: Destroy this post$
     new_image: New image$
     show_image: Show this image$
+    destroy_image: Destroy this image$
+    destroy_comment: Destroy this comment$
   tab_names:
   # по контроллерам:
   layouts:
@@ -31,3 +34,14 @@ en:
       posts: Posts$
       images: Images$
       comments: Comments$
+    user_content:
+      title: content$
+      posts: 'posts:$'
+      content: 'Content:$'
+      images: 'images:$'
+      comments: 'comments:$'
+      table:
+        comment: Comment(Show)$
+        type: Type$
+        delete: Delete$
+        deleted: (deleted)$
