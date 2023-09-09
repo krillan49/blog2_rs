@@ -3,13 +3,18 @@
 en:
   # общее:
   links:
+    index_posts: Back to posts$
     new_post: New post$
     show_post: Show this post$
+    edit_post: Edit this post$
     destroy_post: Destroy this post$
     new_image: New image$
     show_image: Show this image$
     destroy_image: Destroy this image$
+    show_comment: Show comment$
     destroy_comment: Destroy this comment$
+  submits:
+    create_post: Create Post$
   tab_names:
   # по контроллерам:
   layouts:
@@ -45,3 +50,17 @@ en:
         type: Type$
         delete: Delete$
         deleted: (deleted)$
+  posts:
+    all:
+      author: 'Author:$'
+      content: 'Content:$'
+    index:
+      title: Posts$
+    new:
+      title: New post$
+    show:
+      comment_title: You can add new comment here$
+      comment_title2: Login or register to add a comment$
+      comment_message: No comments yet$
+    edit:
+      title: Editing post$

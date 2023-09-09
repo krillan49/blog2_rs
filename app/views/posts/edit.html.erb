@@ -1,8 +1,8 @@
-<h1 class="text-center">Editing post</h1>
+<h1 class="text-center"><%= t('.title') %></h1>
 
 <h5 class="text-center">
-  <%= link_to "Show this post", @post %> |
-  <%= link_to "Back to posts", posts_path %>
+  <%= link_to t('links.show_post'), @post %> |
+  <%= link_to t('links.index_posts'), posts_path %>
 </h5>
 
 <%= render "form", post: @post %>

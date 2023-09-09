@@ -52,7 +52,8 @@
 <hr>
 
 <% if @image.comments.size < 2 && @image.comments[-1].body == nil %>
-  <h4>Пока еще нет комментариев</h4>
+<!-- ошибка для незареганного юзера -->
+  <h6>Пока еще нет комментариев</h6>
 <% end %>
 
 <% @image.comments.reverse.each do |comment| %>
