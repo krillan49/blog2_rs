@@ -13,6 +13,7 @@
       <div class="container">
         <img src="<%= content.url %>" alt="image <%= content.id %>" class="img-fluid img-thumbnail rounded">
       </div>
+      <br>
       <p class="text-center"><%= link_to t('links.show_image'), content %></p>
     <% elsif content.class == Post %>
     <p><%= content.content %></p>

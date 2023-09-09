@@ -14,11 +14,12 @@
      | <%= button_to "Destroy this image", @image, method: :delete, class: 'btn btn-link' %>
   <% end %>
 </div>
+<br>
 
 
 <!-- ===================== comments _form.html.erb ======================== -->
+<hr>
 <% if user_signed_in? %>
-  <hr>
 
   <%= form_for([@image, @image.comments.build]) do |form| %> <!-- изменил на форму как в рубишколе -->
 
@@ -51,7 +52,7 @@
 <!-- ===================== Вывод комментов ======================== -->
 <hr>
 
-<% if @image.comments.size < 2 && @image.comments[-1].body == nil %>
+<% if @image.comments.size < 2 && (!user_signed_in? || @image.comments[-1].body == nil) %>
 <!-- ошибка для незареганного юзера -->
   <h6>Пока еще нет комментариев</h6>
 <% end %>

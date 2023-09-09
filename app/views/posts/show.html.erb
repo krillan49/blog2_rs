@@ -10,11 +10,12 @@
      | <%= button_to t('links.destroy_post'), @post, method: :delete, class: 'btn btn-link' %>
   <% end %>
 </div>
+<br>
 
 
 <!-- ===================== comments _form.html.erb ======================== -->
+<hr>
 <% if user_signed_in? %>
-  <hr>
 
   <%= form_for([@post, @post.comments.build]) do |form| %> <!-- изменил на форму как в рубишколе -->
 
@@ -48,7 +49,7 @@
 <!-- ===================== Вывод комментов ======================== -->
 <hr>
 
-<% if @post.comments.size < 2 && @post.comments[-1].body == nil %>
+<% if @post.comments.size < 2 && (!user_signed_in? || @post.comments[-1].body == nil) %>
 <!-- ошибка для незареганного юзера -->
   <h6><%= t('.comment_message') %></h6>
 <% end %>
