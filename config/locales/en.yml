@@ -1,12 +1,23 @@
 
 
 en:
+  # общее:
   links:
     new_post: New post$
     show_post: Show this post$
     new_image: New image$
     show_image: Show this image$
   tab_names:
+  # по контроллерам:
+  layouts:
+    application:
+      user_list: Users list$
+      comments: Comments$
+      posts: Posts$
+      images: Images$
+      sign_out: Sign Out$
+      sign_in: Sign In$
+      sign_up: Sign Up$
   home:
     index:
       title: Contents$
