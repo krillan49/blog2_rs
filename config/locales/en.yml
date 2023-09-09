@@ -22,3 +22,12 @@ en:
     index:
       title: Contents$
       author: "Author:$"
+  protected:
+    users_list:
+      title: Users list$
+      name: Name$
+      status: Status$
+      mail: Mail$
+      posts: Posts$
+      images: Images$
+      comments: Comments$
