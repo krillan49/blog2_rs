@@ -13,13 +13,13 @@
   <% end %>
 
   <div class="mb-3">
-    <p>Автор: <b><%= current_user.username %></b></p>
+    <p><%= t('images.all.author') %> <b><%= current_user.username %></b></p>
     <%= form.hidden_field :user_id, value: current_user.id %>
     <%= form.hidden_field :author, value: current_user.username %>
   </div>
 
   <div class="mb-3">
-    <%= form.label :url, class: 'form-label' %>
+    <%= form.label :url, t('images.all.url'), class: 'form-label' %>
     <%= form.text_area :url, class: 'form-control textarea_big' %>
   </div>
 

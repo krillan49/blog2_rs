@@ -1,8 +1,8 @@
-<h1 class="text-center">Editing image</h1>
+<h1 class="text-center"><%= t('.title') %></h1>
 
 <h5 class="text-center">
-  <%= link_to "Show this image", @image %> |
-  <%= link_to "Back to images", images_path %>
+  <%= link_to t('links.show_image'), @image %> |
+  <%= link_to t('links.index_images'), images_path %>
 </h5>
 
 <%= render "form", image: @image %>

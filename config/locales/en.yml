@@ -8,13 +8,13 @@ en:
     show_post: Show this post$
     edit_post: Edit this post$
     destroy_post: Destroy this post$
+    index_images: Back to images$
     new_image: New image$
     show_image: Show this image$
+    edit_image: Edit this image$
     destroy_image: Destroy this image$
     show_comment: Show comment$
     destroy_comment: Destroy this comment$
-  submits:
-    create_post: Create Post$
   tab_names:
   # по контроллерам:
   layouts:
@@ -64,3 +64,17 @@ en:
       comment_message: No comments yet$
     edit:
       title: Editing post$
+  images:
+    all:
+      author: 'Author:$'
+      url: URL$
+    index:
+      title: Images$
+    new:
+      title: New image$
+    show:
+      comment_title: You can add new comment here$
+      comment_title2: Login or register to add a comment$
+      comment_message: No comments yet$
+    edit:
+      title: Editing image$
