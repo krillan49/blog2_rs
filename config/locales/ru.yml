@@ -3,4 +3,5 @@
 ru:
   home:
     index:
-      title: 'Контент'
+      title: Контент
+      author: "Автор:"

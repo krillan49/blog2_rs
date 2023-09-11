@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head lang="<%= I18n.locale %>"> 
     <title>Blog2</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <meta charset="utf-8"> <!-- I18n -->
 
     <%= favicon_link_tag 'favicon.png' %>
 
