@@ -4,7 +4,106 @@ ru:
   en: Английский
   ru: Русский
   # общее:
+  links:
+    # post
+    index_posts: Все посты
+    new_post: Добавить новый пост
+    show_post: Показать пост
+    edit_post: Редактировать пост
+    destroy_post: Удалить пост
+    # image
+    index_images: Все картинки
+    new_image: Добавить новую картинку
+    show_image: Показать картинку
+    edit_image: Редактировать картинку
+    destroy_image: Удалить картинку
+    # comment
+    index_comments: Все комментарии
+    new_comment: Новый комментарий
+    show_comment: Показать комментарий
+    edit_comment: Редактировать комментарий
+    destroy_comment: Удалить комментарий
+  tab_names:
+  # по контроллерам:
+  layouts:
+    application:
+      user_list: Пользователи
+      comments: Комментарии
+      posts: Посты
+      images: Картинки
+      sign_out: Выйти
+      sign_in: Войти
+      sign_up: Регистрация
   home:
     index:
       title: Контент
       author: "Автор:"
+  protected:
+    users_list:
+      title: Список пользователей
+      name: Имя
+      status: Статус
+      mail: Почта
+      posts: Посты
+      images: Картинки
+      comments: Комментарии
+    user_content:
+      title: Контент
+      posts: 'посты:'
+      content: 'Контент:'
+      images: 'Картинки:'
+      comments: 'комментарии:'
+      table:
+        comment: Показать комментарий
+        type: Тип
+        delete: Удалить
+        deleted: (удален)
+  posts:
+    all:
+      author: 'Автор:'
+      content: 'Контент:'
+    index:
+      title: Посты
+    new:
+      title: Добавить новый пост
+    show:
+      comment_title: Оставьте свой комментарий
+      comment_title2: Войдите или зарегистрируйтесь, чтобы оставить комментарий
+      comment_message: Еще нет комментариев
+    edit:
+      title: Редактирование поста
+  images:
+    all:
+      author: 'Автор:'
+      url: Адрес ссылки
+    index:
+      title: Картинки
+    new:
+      title: Добавить новую картинку
+    show:
+      comment_title: Оставьте свой комментарий
+      comment_title2: Войдите или зарегистрируйтесь, чтобы оставить комментарий
+      comment_message: Еще нет комментариев
+    edit:
+      title: Редактирование картинки
+  comments:
+    all:
+      author: Автор
+    form:
+      type: Тип контента
+      tid: ID контента
+      body: Текст комментария
+    index:
+      title: Комментарии
+      show: Показать комментарий
+      type: Тип
+      delete: Удалить
+      m_unreg: (аноним)
+      m_deleted: (удален)
+    new:
+      title: Добавить новый комментарий
+    show:
+      author: 'Автор:'
+      type: 'Тип:'
+    edit:
+      title: Редактировать комментарий

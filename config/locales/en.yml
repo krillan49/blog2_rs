@@ -6,104 +6,104 @@ en:
   # общее:
   links:
     # post
-    index_posts: Back to posts$
-    new_post: New post$
-    show_post: Show this post$
-    edit_post: Edit this post$
-    destroy_post: Destroy this post$
+    index_posts: Back to posts
+    new_post: New post
+    show_post: Show this post
+    edit_post: Edit this post
+    destroy_post: Destroy this post
     # image
-    index_images: Back to images$
-    new_image: New image$
-    show_image: Show this image$
-    edit_image: Edit this image$
-    destroy_image: Destroy this image$
+    index_images: Back to images
+    new_image: New image
+    show_image: Show this image
+    edit_image: Edit this image
+    destroy_image: Destroy this image
     # comment
-    index_comments: Back to comments$
-    new_comment: New comment$
-    show_comment: Show comment$
-    edit_comment: Edit this comment$
-    destroy_comment: Destroy this comment$
+    index_comments: Back to comments
+    new_comment: New comment
+    show_comment: Show comment
+    edit_comment: Edit this comment
+    destroy_comment: Destroy this comment
   tab_names:
   # по контроллерам:
   layouts:
     application:
-      user_list: Users list$
-      comments: Comments$
-      posts: Posts$
-      images: Images$
-      sign_out: Sign Out$
-      sign_in: Sign In$
-      sign_up: Sign Up$
+      user_list: Users list
+      comments: Comments
+      posts: Posts
+      images: Images
+      sign_out: Sign Out
+      sign_in: Sign In
+      sign_up: Sign Up
   home:
     index:
-      title: Contents$
-      author: "Author:$"
+      title: Contents
+      author: "Author:"
   protected:
     users_list:
-      title: Users list$
-      name: Name$
-      status: Status$
-      mail: Mail$
-      posts: Posts$
-      images: Images$
-      comments: Comments$
+      title: Users list
+      name: Name
+      status: Status
+      mail: Mail
+      posts: Posts
+      images: Images
+      comments: Comments
     user_content:
-      title: content$
-      posts: 'posts:$'
-      content: 'Content:$'
-      images: 'images:$'
-      comments: 'comments:$'
+      title: content
+      posts: 'posts:'
+      content: 'Content:'
+      images: 'images:'
+      comments: 'comments:'
       table:
-        comment: Comment(Show)$
-        type: Type$
-        delete: Delete$
-        deleted: (deleted)$
+        comment: Comment(Show)
+        type: Type
+        delete: Delete
+        deleted: (deleted)
   posts:
     all:
-      author: 'Author:$'
-      content: 'Content:$'
+      author: 'Author:'
+      content: 'Content:'
     index:
-      title: Posts$
+      title: Posts
     new:
-      title: New post$
+      title: New post
     show:
-      comment_title: You can add new comment here$
-      comment_title2: Login or register to add a comment$
-      comment_message: No comments yet$
+      comment_title: You can add new comment here
+      comment_title2: Login or register to add a comment
+      comment_message: No comments yet
     edit:
-      title: Editing post$
+      title: Editing post
   images:
     all:
-      author: 'Author:$'
-      url: URL$
+      author: 'Author:'
+      url: URL
     index:
-      title: Images$
+      title: Images
     new:
-      title: New image$
+      title: New image
     show:
-      comment_title: You can add new comment here$
-      comment_title2: Login or register to add a comment$
-      comment_message: No comments yet$
+      comment_title: You can add new comment here
+      comment_title2: Login or register to add a comment
+      comment_message: No comments yet
     edit:
-      title: Editing image$
+      title: Editing image
   comments:
     all:
-      author: Author$
+      author: Author
     form:
-      type: Commentable type$
-      tid: Commentable ID$
-      body: Body$
+      type: Commentable type
+      tid: Commentable ID
+      body: Body
     index:
-      title: Comments$
-      show: Show comment$
-      type: Type$
-      delete: Delete$
-      m_unreg: (unreg)$
-      m_deleted: (deleted)$
+      title: Comments
+      show: Show comment
+      type: Type
+      delete: Delete
+      m_unreg: (unreg)
+      m_deleted: (deleted)
     new:
-      title: New comment$
+      title: New comment
     show:
-      author: 'Author:$'
-      type: 'Type:$'
+      author: 'Author:'
+      type: 'Type:'
     edit:
-      title: Editing comment$
+      title: Editing comment
