@@ -1,6 +1,8 @@
 
 
 en:
+  en: English
+  ru: Russian
   # общее:
   links:
     index_posts: Back to posts$

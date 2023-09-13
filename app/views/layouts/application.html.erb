@@ -28,10 +28,8 @@
     <nav class="navbar navbar-expand-lg fixed-top bg-light"> 
       <div class="container">
 
-        <a class="navbar-brand" href="/">
-          <!-- <img src="https://avatars1.githubusercontent.com/u/14949379?v=3&amp;s=100" alt="logo" class="d-inline-block align-text-top" width="30" height="30"> -->
-          Blog2RailsRubyschool
-        </a>
+        <!-- <a class="navbar-brand" href="/">Blog2RailsRubyschool</a> -->
+        <%= link_to 'Blog2RailsRubyschool', root_path, class: 'navbar-brand' %>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#content" aria-controls="content" aria-expanded="false" aria-label="Toggle navigation">
           <!-- <span class="navbar-toggler-icon"></span> -->
@@ -42,19 +40,45 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <% if admin? %>
               <li class="nav-item"> 
-                <a class="nav-link" href="/users_list"><%= t('.user_list') %></a> 
+                <!-- <a class="nav-link" href="/users_list">Users list</a> -->
+                <%= link_to t('.user_list'), users_list_path, class: 'nav-link' %>
               </li>
               <li class="nav-item"> 
-                <a class="nav-link" href="/comments"><%= t('.comments') %></a>
+                <!-- <a class="nav-link" href="/comments">Comments</a> -->
+                <%= link_to t('.comments'), comments_path, class: 'nav-link' %>
               </li>
             <% end %>
             <li class="nav-item">
-              <a class="nav-link" href="/posts"><%= t('.posts') %></a>
+              <!-- <a class="nav-link" href="/posts">Posts</a> -->
+              <%= link_to t('.posts'), posts_path, class: 'nav-link' %>
             </li>
             <li class="nav-item"> 
-              <a class="nav-link" href="/images"><%= t('.images') %></a> 
+              <!-- <a class="nav-link" href="/images">Images</a> -->
+              <%= link_to t('.images'), images_path, class: 'nav-link' %>
             </li>   
           </ul>
+
+          <!-- Смена языка i18n -->
+          <ul class="nav col-12 col-lg-auto mb-2 mb-md-0">
+            <li class="dropdown">
+              <%= link_to '#', class: 'nav-link px-2 dropdown-toggle text-white', data: {"bs-toggle": 'dropdown'} do %>
+                <%= tag.div '', class: "mt-1" %>
+                <%= t I18n.locale %>
+              <% end %>
+              <ul class="dropdown-menu">
+                <% I18n.available_locales.each do |locale| %>
+                  <li>
+                    <% if I18n.locale == locale %>
+                      <%= tag.span t(locale), class: 'dropdown-item' %>
+                    <% else %>
+                      <%= link_to t(locale), url_for(locale: locale), class: 'dropdown-item' %>
+                    <% end %>
+                  </li>
+                <% end %>
+              </ul>
+            </li>
+          </ul>
+
           <!-- Devise: ссылки входа и выхода -->
           <div class="d-flex header_sign">
             <% if user_signed_in? %>
