@@ -1,17 +1,17 @@
-<h1 class="text-center">Author: <%= @comment.author %></h1>
+<h1 class="text-center"><%= t('.author') %> <%= @comment.author %></h1>
 <br>
-<p class="text-center"><b>Body:</b> <%= @comment.body %></p>
+<p class="text-center"><%= @comment.body %></p>
 <p class="text-center"><b>ID:</b> <%= @comment.id %>; 
-  <b>Type:</b> <%= @comment.commentable_type %>; 
+  <b><%= t('.type') %></b> <%= @comment.commentable_type %>; 
   <b>TID:</b> <%= @comment.commentable_id %>
 </p>
 
 <div class="text-center">
   <% if admin? %>
-    <%= link_to "Back to comments", comments_path %> | 
+    <%= link_to t('links.index_comments'), comments_path %> | 
   <% end %>
   <% if have_access_to_content?(@comment) %>
-    <%= link_to "Edit this comment", edit_comment_path(@comment) %> | 
-    <%= button_to "Destroy this comment", @comment, method: :delete, class: 'btn btn-link' %>
+    <%= link_to t('links.edit_comment'), edit_comment_path(@comment) %> | 
+    <%= button_to t('links.destroy_comment'), @comment, method: :delete, class: 'btn btn-link' %>
   <% end %>
 </div>

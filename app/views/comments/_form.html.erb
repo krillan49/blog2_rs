@@ -13,7 +13,7 @@
 
   <!-- ===================== девайс ======================== -->
   <div class="mb-3">
-    Author: <b><%= current_user.username %></b>
+    <%= t('comments.all.author') %>: <b><%= current_user.username %></b>
     <%= form.hidden_field :user_id, value: current_user.id %>
     <%= form.hidden_field :author, value: current_user.username %>
   </div> 
@@ -21,18 +21,18 @@
 
   <!-- ===================== добавлено ======================== -->
   <div class="mb-3">
-    <%= form.label :commentable_type, class: 'form-label' %>
+    <%= form.label :commentable_type, t('comments.form.type'), class: 'form-label' %>
     <%= form.select :commentable_type, ["Post", "Image"], {}, class: 'form-select' %>
   </div>
 
   <div class="mb-3">
-    <%= form.label :commentable_id, class: 'form-label' %>
+    <%= form.label :commentable_id, t('comments.form.tid'), class: 'form-label' %>
     <%= form.select :commentable_id, @content_id_selector, {}, class: 'form-select' %>
   </div>
   <!-- ======================================================== -->
 
   <div class="mb-3">
-    <%= form.label :body, class: 'form-label' %>
+    <%= form.label :body, t('comments.form.body'), class: 'form-label' %>
     <%= form.text_area :body, class: 'form-control textarea_medium' %>
   </div>
 

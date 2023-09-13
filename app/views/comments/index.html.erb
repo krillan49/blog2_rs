@@ -1,19 +1,19 @@
-<h1 class="text-center">Comments</h1>
+<h1 class="text-center"><%= t('.title') %></h1>
 
-<h5 class="text-center"><%= link_to "New comment", new_comment_path %></h5><br>
+<h5 class="text-center"><%= link_to t('links.new_comment'), new_comment_path %></h5><br>
 
 <div id="comments">
   <div class="table-responsive">
     <table class="table table-striped">
       <thead> 
         <tr> 
-          <th>Автор</th>
+          <th><%= t('comments.all.author') %></th>
           <th>AID</th>
-          <th>Коммент(Show)</th> 
+          <th><%= t('.show') %></th> 
           <th>CID</th> 
-          <th>Type</th> 
+          <th><%= t('.type') %></th> 
           <th>TID</th>
-          <th>Delete</th> 
+          <th><%= t('.delete') %></th> 
         </tr> 
       </thead>
       <tbody>
@@ -23,7 +23,7 @@
               <% if comment.user %>
                 <a href="/protected/<%= comment.user.id %>"><%= comment.author %></a>
               <% else %>
-                <%= comment.author %>(unreg)
+                <%= comment.author %><%= t('.m_unreg') %>
               <% end %>
             </td>
             <td><%= comment.user ? comment.user.id : '-' %></td> 
@@ -33,11 +33,13 @@
               <% if comment.commentable %>
                 <%= link_to comment.commentable_type, comment.commentable %>
               <% else %>
-                <%= comment.commentable_type %>(deleted)
+                <%= comment.commentable_type %><%= t('.m_deleted') %>
               <% end %>
             </td>
             <td><%= comment.commentable_id %></td> 
-            <td><%= button_to "Destroy this comment", comment, method: :delete, class: 'btn btn-link'%></td>
+            <td>
+              <%= button_to t('links.destroy_comment'), comment, method: :delete, class: 'btn btn-link'%>
+            </td>
           </tr>
         <% end %>
       </tbody>

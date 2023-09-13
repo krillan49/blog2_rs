@@ -5,17 +5,23 @@ en:
   ru: Russian
   # общее:
   links:
+    # post
     index_posts: Back to posts$
     new_post: New post$
     show_post: Show this post$
     edit_post: Edit this post$
     destroy_post: Destroy this post$
+    # image
     index_images: Back to images$
     new_image: New image$
     show_image: Show this image$
     edit_image: Edit this image$
     destroy_image: Destroy this image$
+    # comment
+    index_comments: Back to comments$
+    new_comment: New comment$
     show_comment: Show comment$
+    edit_comment: Edit this comment$
     destroy_comment: Destroy this comment$
   tab_names:
   # по контроллерам:
@@ -80,3 +86,24 @@ en:
       comment_message: No comments yet$
     edit:
       title: Editing image$
+  comments:
+    all:
+      author: Author$
+    form:
+      type: Commentable type$
+      tid: Commentable ID$
+      body: Body$
+    index:
+      title: Comments$
+      show: Show comment$
+      type: Type$
+      delete: Delete$
+      m_unreg: (unreg)$
+      m_deleted: (deleted)$
+    new:
+      title: New comment$
+    show:
+      author: 'Author:$'
+      type: 'Type:$'
+    edit:
+      title: Editing comment$

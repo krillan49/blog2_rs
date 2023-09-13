@@ -1,7 +1,7 @@
-<h1 class="text-center">New comment</h1>
+<h1 class="text-center"><%= t('.title') %></h1>
 
 <h5 class="text-center">
-  <%= link_to "Back to comments", comments_path %>
+  <%= link_to t('links.index_comments'), comments_path %>
 </h5>
 
 <%= render "form", comment: @comment %>
