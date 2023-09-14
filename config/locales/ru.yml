@@ -39,7 +39,7 @@ ru:
       title: Контент
       author: "Автор:"
   protected:
-    users_list:
+    index:
       title: Список пользователей
       name: Имя
       status: Статус
@@ -47,7 +47,7 @@ ru:
       posts: Посты
       images: Картинки
       comments: Комментарии
-    user_content:
+    show:
       title: Контент
       posts: 'посты:'
       content: 'Контент:'

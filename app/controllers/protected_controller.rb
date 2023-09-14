@@ -1,11 +1,11 @@
 class ProtectedController < ApplicationController
   before_action :admin?
 
-  def users_list # get 'users_list'
+  def index # get 'protected'
     @users = User.all
   end
 
-  def user_content # get 'protected/:id'
+  def show # get 'protected/:id'
     @user = User.find(params[:id])
   end
 

@@ -39,7 +39,7 @@ en:
       title: Contents
       author: "Author:"
   protected:
-    users_list:
+    index:
       title: Users list
       name: Name
       status: Status
@@ -47,7 +47,7 @@ en:
       posts: Posts
       images: Images
       comments: Comments
-    user_content:
+    show:
       title: content
       posts: 'posts:'
       content: 'Content:'
