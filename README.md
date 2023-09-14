@@ -1,10 +1,8 @@
 # Blog2(rubyschool)
 
-Ruby, Rails, Devise, Rspec.
+Ruby, Rails, Devise, i18n, Rspec.
 
-["Выпускной" учебный проект по итогам курса Rubyschool](https://rubyschool.us/)
-
-Учебный проект по итогам курса Rubyschool для обобщения и закрепления пройденного материала по темам: 
+"Выпускной" учебный проект по итогам курса [Rubyschool](https://rubyschool.us/)
 
 
 * Ruby version 3.1.2p20
@@ -30,7 +28,10 @@ rake db:migrate
 rails s
 ```
 
-4. Open in your browser: http://localhost:3000/
+4. Open in your browser: 
+```bash
+http://localhost:3000/
+```
 
 5. Add admin user with("..." - your data):
 ```bash
@@ -42,9 +43,9 @@ User.create(email: '...', username: '...', password: '...', password_confirmatio
 -
 * Генераторы: scaffold, controller, migration, devise
 * Ассоциации: polymorphism, 1 to many. Комменты принадлежат и полиморфному commentable и юзеру(devise)
-* Комменты имеют 2 вида маршрутов: обычные resourses; вложенные в posts и images для create, соотв экшен create контроллера comment обрабатывает в соотв с тем из какого вида пришла форма.
-* Есть возможность назначить админа, который имеет расширеные права и доступ к различной статистике
+* Комменты имеют 2 вида маршрутов: как независимые resourses, так и вложенные в posts и images для create,comments#create обрабатывает в соответствии с тем из какого вида пришла форма.
+* Юзеры могут иметь роли: админа, зарегистрированного пользователя и гостя. Роли имеют разный доступ.
 * Bootstrap 5 + CSS
-* Языки English, Русский. i18n
+* i18n: English, Русский.
 
 
