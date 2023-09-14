@@ -6,10 +6,10 @@ en:
   # встроенное:
   activerecord:
     models:
-      comment: Comment
-      image: Image
-      post: Post
-      user: User
+      comment: comment
+      image: image
+      post: post
+      user: user
     attributes:
       comment:
         author: Author
@@ -86,11 +86,9 @@ en:
       images: Images
       comments: Comments
     show:
-      title: content
-      posts: 'posts:'
-      content: 'Content:'
-      images: 'images:'
-      comments: 'comments:'
+      posts: Posts
+      images: Images
+      comments: Comments
       table:
         comment: Comment(Show)
         type: Type

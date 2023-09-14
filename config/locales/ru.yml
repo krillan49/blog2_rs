@@ -6,10 +6,10 @@ ru:
   # встроенное: 
   activerecord:
     models:
-      comment: Комментарий
-      image: Картинка
-      post: Пост
-      user: Пользователь
+      comment: комментарий
+      image: изображение
+      post: пост
+      user: пользователь
     attributes:
       comment:
         author: Автор
@@ -86,11 +86,9 @@ ru:
       images: Картинки
       comments: Комментарии
     show:
-      title: Контент
-      posts: 'посты:'
-      content: 'Контент:'
-      images: 'Картинки:'
-      comments: 'комментарии:'
+      posts: Посты
+      images: Картинки
+      comments: Комментарии
       table:
         comment: Показать комментарий
         type: Тип

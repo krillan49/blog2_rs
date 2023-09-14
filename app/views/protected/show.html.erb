@@ -1,14 +1,15 @@
-<h1 class="text-center"><%= @user.username %> <%= t('.title') %></h1>
+<h1 class="text-center"><%= @user.username %></h1>
+<br>
 
 <hr>
-<h4 class="text-center"><%= @user.username %> <%= t('.posts') %></h4>
+<h4 class="text-center"><%= t('.posts') %></h4>
 <hr>
 
 <div id="posts">
   <% @user.posts.reverse.each do |post| %>
     <br>
     <p class="text-center"><b>Post ID:</b> <%= post.id %></p>
-    <p><b><%= t('.content') %></b> <%= post.content %></p>
+    <p><%= post.content %></p>
     <div class="text-center">
       <%= link_to t('links.show_post'), post %> | 
       <%= button_to t('links.destroy_post'), post, method: :delete, class: 'btn btn-link' %>
@@ -19,7 +20,7 @@
 </div>
 
 
-<h4 class="text-center"><%= @user.username %> <%= t('.images') %></h4>
+<h4 class="text-center"><%= t('.images') %></h4>
 <hr>
 
 <div id="images">
@@ -39,7 +40,7 @@
 </div>
 
 
-<h4 class="text-center"><%= @user.username %> <%= t('.comments') %></h4>
+<h4 class="text-center"><%= t('.comments') %></h4>
 <hr>
 
 <div id="comments">
