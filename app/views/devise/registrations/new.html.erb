@@ -1,4 +1,4 @@
-<h1 class="text-center">Sign up</h1>
+<h1 class="text-center"><%= t('.title') %></h1>
 
 <h5 class="text-center"><%= render "devise/shared/links" %></h5>
 
@@ -18,19 +18,19 @@
   <!-- =========================================== -->
 
   <div class="field mb-3">
-    <%= f.label :password, class: 'form-label' %>
+    <%= f.label :password, t('.password'), class: 'form-label' %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> <%= t('.password_message') %>)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
   </div>
 
   <div class="field mb-3">
-    <%= f.label :password_confirmation, class: 'form-label' %>
+    <%= f.label :password_confirmation, t('.password_confirmation'), class: 'form-label' %>
     <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit t('.submit') %>
   </div>
 <% end %>

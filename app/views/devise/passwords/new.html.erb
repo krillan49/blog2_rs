@@ -1,4 +1,4 @@
-<h1 class="text-center">Forgot your password?</h1>
+<h1 class="text-center"><%= t('.title') %></h1>
 
 <h5 class="text-center"><%= render "devise/shared/links" %></h5>
 
@@ -11,6 +11,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+    <%= f.submit t('.submit') %>
   </div>
 <% end %>
