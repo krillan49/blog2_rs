@@ -143,9 +143,9 @@ a.navbar-brand:hover, a.nav-link:hover {
   font-size: 1.5rem;
   letter-spacing: 1px;
 }
-@media (max-width: 350px) {
+@media (max-width: 370px) {
   .navbar .navbar-brand{
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -158,6 +158,18 @@ a.navbar-brand:hover, a.nav-link:hover {
 
 .header_username{
   font-size: 1.2rem;
+}
+
+.dropdown-toggle {
+  background-color: rgb(30, 136, 171);
+  border-color: rgb(30, 136, 171);
+}
+
+.dropdown-menu a:hover {
+  font-weight: 500;
+  color: rgb(5, 105, 135);
+  background-color: rgb(183, 224, 235);
+  text-shadow: none;
 }
 
 
