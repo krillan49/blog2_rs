@@ -3,6 +3,44 @@
 ru:
   en: Английский
   ru: Русский
+  # встроенное: 
+  activerecord:
+    models:
+      comment: Комментарий
+      image: Картинка
+      post: Пост
+      user: Пользователь
+    attributes:
+      comment:
+        author: Автор
+        body: Содержание
+        commentable_type: Тип комментируемого
+        commentable_id: ID комментируемого
+        created_at: Дата создания
+        updated_at: Дата последнего изменения
+        user_id: ID пользователя
+      image:
+        author: Автор
+        url: URL
+        created_at: Дата создания
+        updated_at: Дата последнего изменения
+        user_id: ID пользователя
+      post:
+        author: Автор
+        content: Содержание
+        created_at: Дата создания
+        updated_at: Дата последнего изменения
+        user_id: ID пользователя
+      user:
+        email: Адрес электронной почты
+        encrypted_password: Зашифрованный пароль
+        reset_password_token: Токен сброса пароля
+        reset_password_sent_at: Дата отправки инструкций сброса пароля
+        remember_created_at: Remember created_at
+        username: Имя пользователя
+        created_at: Дата создания
+        updated_at: Дата последнего изменения
+        admin: Админ?
   # общее:
   links:
     # post
