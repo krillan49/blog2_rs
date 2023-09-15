@@ -8,7 +8,7 @@ describe Post do
   end
 
   describe "assotiations" do
-    # it { should belong_to :user }
+    it { should belong_to :user }
     it { should have_many :comments}
   end
 

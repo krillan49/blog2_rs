@@ -7,7 +7,7 @@ describe Comment do
   end
 
   describe "assotiations" do
-    # it { should belong_to :user }
+    it { should belong_to :user }
     it { should belong_to :commentable }
   end
 
