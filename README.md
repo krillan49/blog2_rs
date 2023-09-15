@@ -1,11 +1,11 @@
 # Blog2(rubyschool)
 
-Ruby, Rails, Devise, i18n, Rspec.
 
-"Выпускной" учебный проект по итогам курса [Rubyschool](https://rubyschool.us/)
+### "Выпускной" проект по итогам курса [Rubyschool](https://rubyschool.us/) (Темы: Rails, Devise, i18n, Rspec)
 
 
 * Ruby version 3.1.2p20
+* Rails version 7.0.7
 
 
 ## Start project
@@ -42,10 +42,10 @@ User.create(email: '...', username: '...', password: '...', password_confirmatio
 Применялось:
 -
 * Генераторы: scaffold, controller, migration, devise
-* Ассоциации: polymorphism, 1 to many. Комменты принадлежат и полиморфному commentable и юзеру(devise)
-* Комменты имеют 2 вида маршрутов: как независимые resourses, так и вложенные в posts и images для create,comments#create обрабатывает в соответствии с тем из какого вида пришла форма.
-* Юзеры могут иметь роли: админа, зарегистрированного пользователя и гостя. Роли имеют разный доступ.
+* Ассоциации: polymorphism, 1 to many. Комменарии принадлежат и полиморфному commentable и user(devise). Комменты имеют 2 вида маршрутов: независимые resourses, вложенные в posts и images для create,comments#create обрабатывает в соответствии с тем из какого вида пришла форма.
+* Пользователи(Devise) могут иметь роли: админа, зарегистрированного пользователя и гостя. Роли имеют разный доступ.
 * Bootstrap 5 + CSS
 * i18n: English, Русский.
+* Тесты: Rspec, Shoulda-matchers
 
 
