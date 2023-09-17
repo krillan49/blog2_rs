@@ -12,4 +12,14 @@ describe Post do
     it { should have_many :comments}
   end
 
+  describe "#columns" do
+    it "returns the post content" do
+      user = create :user
+      # arrange + act
+      post = create(:post, author: 'admin', content: 'a' * 100, user: user) 
+      # assert
+      expect(post.content).to eq 'a' * 100
+    end
+  end
+
 end
