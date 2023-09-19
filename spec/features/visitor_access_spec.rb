@@ -1,6 +1,13 @@
 require "rails_helper"
 
-feature "Pages access" do
+feature "Pages and functions access" do
+
+  scenario "access to change language" do
+    visit root_path
+    click_button I18n.t(I18n.locale) # 'English'
+    click_link('Russian')
+    expect(page).to have_content 'Контент'
+  end
 
   scenario "access to home#index/root page" do
     visit root_path
