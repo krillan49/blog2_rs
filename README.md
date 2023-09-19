@@ -42,10 +42,10 @@ User.create(email: '...', username: '...', password: '...', password_confirmatio
 Применялось:
 -
 * Генераторы: scaffold, controller, migration, devise
-* Ассоциации: polymorphism, 1 to many. Комменарии принадлежат и полиморфному commentable и user(devise). Комменты имеют 2 вида маршрутов: независимые resourses, вложенные в posts и images для create,comments#create обрабатывает в соответствии с тем из какого вида пришла форма.
+* Ассоциации: polymorphism, 1 to many. Комменарии принадлежат и полиморфному commentable и user(devise). Комменты имеют 2 вида маршрутов: независимые resourses, вложенные в posts и images для create, comments#create обрабатывает в соответствии с тем из какого вида пришла форма.
 * Пользователи(Devise) могут иметь роли: админа, зарегистрированного пользователя и гостя. Роли имеют разный доступ.
 * Bootstrap 5 + CSS
 * i18n: English, Русский.
-* Тесты: Rspec, Shoulda-matchers
+* Тесты: Rspec, Shoulda-matchers, Factory Bot, Capybara
 
 
